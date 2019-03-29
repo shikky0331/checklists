@@ -19,4 +19,5 @@ WORKDIR $APP_HOME
 ADD Gemfile $APP_HOME/Gemfile
 ADD Gemfile.lock $APP_HOME/Gemfile.lock
 RUN bundle install
+RUN yarn install
 ADD . $APP_HOME
