@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+  web:
+    build: .
+    command: ./bin/server
+    volumes:
+      - .:/myapp
+    ports:
+      - "4000:4000"
+      - "3035:3035"
+    depends_on:
+      - db
+    tty: true
