@@ -18,5 +18,5 @@ RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 ADD Gemfile $APP_HOME/Gemfile
 ADD Gemfile.lock $APP_HOME/Gemfile.lock
-#RUN bundle install
+RUN bundle install
 ADD . $APP_HOME
