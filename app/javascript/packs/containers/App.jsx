@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Checklists from 'components/checklists'
+import Input from 'components/input'
 
 class App extends Component {
   render() {
@@ -7,6 +8,7 @@ class App extends Component {
       <div>
         <h1>Checklists</h1>
         <Checklists />
+        <Input />
       </div>
     )
   }

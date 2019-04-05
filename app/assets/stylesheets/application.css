@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.delete-button {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.create-button {
+  cursor: pointer;
+}

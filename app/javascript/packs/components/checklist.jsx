@@ -1,12 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import destroyChecklist from '../actions/checklists/destroy'
 
 class Checklist extends Component {
+  constructor(props) {
+    super(props);
+    this.handleDestroy = this.handleDestroy.bind(this);
+  }
+
+  handleDestroy(id) {
+    this.props.destroyChecklist(id)
+  }
+
   render() {
     return (
       <li>
         {this.props.checklist.title}
+        <button className='delete-button' onClick={this.handleDestroy.bind(this, this.props.checklist.id)}>Delete</button>
       </li>
     )
   }
@@ -26,8 +37,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  deleteChecklist(id) {
-    dispatch(deleteChecklist({id: id}))
+  destroyChecklist(id) {
+    dispatch(destroyChecklist({id: id}))
   }
 })
 
